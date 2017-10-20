@@ -21,8 +21,8 @@ def get_sources(category):
 
         source_results = None
 
-        if get_sources_response['results']:
-            source_results_list = get_sources_response['results']
+        if get_sources_response['sources']:
+            source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
 
     return  source_results
