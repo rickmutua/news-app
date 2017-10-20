@@ -2,7 +2,7 @@ from flask import render_template
 
 from app import app
 
-from .requests import get_sources
+from .requests import get_sources, get_source_articles
 
 
 @app.route('/')
@@ -34,12 +34,14 @@ def index():
 @app.route('/source/<source_id>')
 def source(source_id):
 
+    articles = get_source_articles(id)
 
+    title = f'{source_id}'
 
-    return render_template('source.html', id = source_id)
+    return render_template('source.html', articles=articles, title=title)
 
-
-@app.route('/source/<source_id>/<article_id>')
-def article(article_id):
-
-    return render_template('articles.html', id = article_id)
+#
+# @app.route('/source/<source_id>/<article_id>')
+# def article(article_id):
+#
+#     return render_template('articles.html', id = article_id)
