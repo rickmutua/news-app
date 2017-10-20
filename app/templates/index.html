@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% import 'macros.html' as macro%}
 
-</body>
-</html>
+
+{% block content%}
+
+        <div class="container">
+
+            <h3> General </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(general) }}
+                </ul>
+
+            <h3> Business </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(business) }}
+                </ul>
+
+            <h3> Sports </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(sport) }}
+                </ul>
+
+
+            <h3> Politics </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(politics) }}
+                </ul>
+
+
+            <h3> Entertainment </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(entertainment) }}
+                </ul>
+
+
+            <h3> Technology </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(technology) }}
+                </ul>
+
+
+            <h3> Music </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(music) }}
+                </ul>
+
+
+            <h3> Gaming </h3>
+
+                <ul>
+                    {{ macro.displaySourceList(gaming) }}
+                </ul>
+
+
+        </div>
+
+    {% endblock %}
