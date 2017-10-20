@@ -2,7 +2,11 @@
 
     {% for source in source_list %}
 
-        <li> {{source.name}} </li>
+        <li>
+            <a href="/source/{{ source.id }}">
+                {{source.name}}
+            </a>
+        </li>
 
     {% endfor %}
 
@@ -12,12 +16,19 @@
 {% macro displayArticleList(article_list) %}
 
     {% for article in article_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-            <img src="{{  }}" alt="{{  }} poster" class="img-responsive">
+
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+
+            <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="img-responsive">
+
             <li class="text-center">
+
                 <a href="/movie/{{article.id}}">
-                    {{ movie.title|truncate(10)}}</a>
+                    {{ article.title|truncate(100)}}
+                </a>
+
             </li>
+
         </div>
 
     {% endfor %}

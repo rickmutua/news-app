@@ -5,7 +5,7 @@ from app.models import source
 Source = source.Source
 
 
-class SourceTest(unittest.Testcase):
+class SourceTest(unittest.TestCase):
 
     def setUp(self):
 
