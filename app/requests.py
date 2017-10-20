@@ -9,6 +9,8 @@ api_key = app.config['API_KEY']
 
 source_base_url = app.config["SOURCE_API_BASE_URL"]
 
+articles_base_url = app.config["ARTICLES_API_BASE_URL"]
+
 
 def get_sources(category):
 
@@ -43,3 +45,7 @@ def process_results(source_list):
         country = source_item.get('country')
 
     return source_results
+
+
+def get_source_article(id):
+
