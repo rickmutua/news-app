@@ -1,6 +1,6 @@
 class Source:
 
-    def __init__(self, id, name, description, url, category, language, country):
+    def __init__(self, id, name, description, url, category, language, country, urlsToLogos):
 
         self.id = id
         self.name = name
@@ -9,6 +9,7 @@ class Source:
         self.category = category
         self.language = language
         self.country = country
+        self.urlsToLogos = urlsToLogos
 
 
 class Article:

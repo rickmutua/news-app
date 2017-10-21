@@ -17,17 +17,19 @@
 
     {% for article in article_list %}
 
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2" style="margin-top: 20px;">
 
-            <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="img-responsive">
+            <a target=_blank href={{article.url}}>
 
-            <li class="text-center">
+                <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="img-responsive">
 
-                <a target=_blank href={{article.url}}>
-                    {{ article.title|truncate(100)}}
-                </a>
+                    <li class="text-center" style="list-style-type: none;">
 
-            </li>
+                      {{ article.title|truncate(100)}}
+
+                    </li>
+
+            </a>
 
         </div>
 

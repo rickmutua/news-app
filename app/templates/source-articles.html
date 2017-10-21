@@ -4,15 +4,19 @@
 
 {% block content %}
 
-    <h3> {{ id }} </h3>
+    <div class="container">
 
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+        <h3 style="font-size: 50px;"> {{ name }} </h3>
 
-        <li class="text-center">
+            <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
 
-            {{ macro.displayArticlesList(articles) }}
+                 <li class="text-center">
 
-        </li>
+                     {{ macro.displayArticlesList(articles) }}
+
+                 </li>
+
+             </div>
 
     </div>
 

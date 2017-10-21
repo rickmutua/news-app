@@ -29,14 +29,14 @@ def index():
                            technology=technology_source, gaming=gaming_source, music=music_source)
 
 
-@main.route('/source/<id>')
-def source(id):
+@main.route('/source/<name>')
+def source(name):
 
-    articles = get_source_articles(id)
+    articles = get_source_articles(name)
 
-    title = f'{id}'
+    title = f'{name}'
 
-    return render_template('source-articles.html', articles=articles, title=title, id=id)
+    return render_template('source-articles.html', articles=articles, title=title, name=name)
 
 #
 # @app.route('/source/<source_id>/<article_id>')
