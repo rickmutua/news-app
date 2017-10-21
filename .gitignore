@@ -2,4 +2,6 @@ virtual/
 *.pyc
 .idea
 app/__pycache__/
-
+__pycache__/
+app/main/__pycache__/
+/start.sh
