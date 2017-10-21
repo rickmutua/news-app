@@ -13,6 +13,8 @@ def configure_request(app):
 
     global api_key, source_base_url, articles_base_url
 
+    api_key = app.config['API_KEY']
+
     source_base_url = app.config["SOURCE_API_BASE_URL"]
 
     articles_base_url = app.config["ARTICLES_API_BASE_URL"]
