@@ -1,11 +1,9 @@
 from flask import render_template
-
-from app import app
-
-from app.requests import get_sources, get_source_articles
+from . import main
+from ..requests import get_sources, get_source_articles
 
 
-@app.route('/')
+@main.route('/')
 def index():
 
     general_sources = get_sources('general')
@@ -31,12 +29,12 @@ def index():
                            technology=technology_source, gaming=gaming_source, music=music_source)
 
 
-@app.route('/source/<int:id>')
+@main.route('/source/<id>')
 def source(id):
 
     articles = get_source_articles(id)
 
-    title = f'{source_name}'
+    title = f'{source.name}'
 
     return render_template('source-articles.html', articles=articles, title=title)
 

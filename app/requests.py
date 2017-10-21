@@ -1,16 +1,21 @@
-from app import app
 import urllib.request, json
-from .models import source, articles
+from .models import Source, Article
 
-Source = source.Source
 
-Article = articles.Article
+api_key = None
 
-api_key = app.config['API_KEY']
+source_base_url = None
 
-source_base_url = app.config["SOURCE_API_BASE_URL"]
+articles_base_url = None
 
-articles_base_url = app.config["ARTICLES_API_BASE_URL"]
+
+def configure_request(app):
+
+    global api_key, source_base_url, articles_base_url
+
+    source_base_url = app.config["SOURCE_API_BASE_URL"]
+
+    articles_base_url = app.config["ARTICLES_API_BASE_URL"]
 
 
 def get_sources(category):
@@ -56,18 +61,16 @@ def get_source_articles(source):
     get_articles_url = articles_base_url.format(source, api_key)
 
     with urllib.request.urlopen(get_articles_url, data=None) as url:
-
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
 
-        articles__results = None
+        articles_results = None
 
         if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_articles(articles_results_list)
 
-            articles__results_list = get_articles_response['articles']
-            articles__results = process_articles(articles__results_list)
-
-    return articles__results
+    return articles_results
 
 
 def process_articles(article_list):

@@ -1,4 +1,9 @@
+import os
+
+
 class Config:
+
+    API_KEY = os.environ.get('API_KEY')
 
     SOURCE_API_BASE_URL = 'https://newsapi.org/v1/sources?category={}'
 
@@ -13,3 +18,9 @@ class ProdConfig(Config):
 class DevConfig(Config):
 
     DEBUG = True
+
+
+config_options = {
+    'development': DevConfig,
+    'production': ProdConfig
+}
