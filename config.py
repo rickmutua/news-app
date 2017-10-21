@@ -7,7 +7,7 @@ class Config:
 
     SOURCE_API_BASE_URL = 'https://newsapi.org/v1/sources?category={}'
 
-    ARTICLES_API_BASE_URL = 'https://newsapi.org/v1/articles?source={}&sortBy=latest&apiKey={}'
+    ARTICLES_API_BASE_URL = 'https://newsapi.org/v1/articles?source={}&apiKey={}'
 
 
 class ProdConfig(Config):

@@ -13,7 +13,7 @@
 {% endmacro %}
 
 
-{% macro displayArticle(article_list) %}
+{% macro displayArticlesList(article_list) %}
 
     {% for article in article_list %}
 
@@ -23,7 +23,7 @@
 
             <li class="text-center">
 
-                <a href="/movie/{{article.id}}">
+                <a target=_blank href={{article.url}}>
                     {{ article.title|truncate(100)}}
                 </a>
 

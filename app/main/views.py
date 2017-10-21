@@ -34,9 +34,9 @@ def source(id):
 
     articles = get_source_articles(id)
 
-    title = f'{source.name}'
+    title = f'{id}'
 
-    return render_template('source-articles.html', articles=articles, title=title)
+    return render_template('source-articles.html', articles=articles, title=title, id=id)
 
 #
 # @app.route('/source/<source_id>/<article_id>')

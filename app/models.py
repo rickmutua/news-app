@@ -18,5 +18,5 @@ class Article:
         self.title = title
         self.description = description
         self.url = url
-        set.urlToImage = urlToImage
+        self.urlToImage = urlToImage
         self.publishedAt = publishedAt
