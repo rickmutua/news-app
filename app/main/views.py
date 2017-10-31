@@ -3,6 +3,8 @@ from . import main
 from ..requests import get_sources, get_source_articles
 from flask_login import login_required
 
+
+
 @main.route('/')
 def index():
 
@@ -30,7 +32,7 @@ def index():
 
 
 @main.route('/source/<name>')
-@login_required
+# @login_required
 
 def source(name):
 
